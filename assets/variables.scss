@@ -1,0 +1,84 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+* {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+$primary: #16267d;
+
+.full-height {
+  height: 100%;
+}
+
+.full-screen {
+  height: calc(100vh - 120px);
+}
+
+.active_menu_btn {
+  // border-bottom: 5px solid #16267d;
+  background-color: transparent !important;
+}
+
+.left-border-radius {
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.right-border-radius {
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+// Scroll bars
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px $primary;
+  border-radius: 0px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px $primary;
+  background-color: $primary;
+}
+
+.glass-bg {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(7.4px);
+}
+
+.glass__simple__bg {
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(7.4px);
+}
+
+.header-menu-lg {
+  background: linear-gradient(
+    45deg,
+    rgba(41, 175, 141, 1) 0%,
+    rgba(57, 191, 232, 1) 35%,
+    rgba(82, 90, 191, 1) 81%
+  );
+  border-radius: 50px;
+  padding: 5px 5px;
+  color: white;
+}
