@@ -28,7 +28,7 @@ export default {
       this.stats = new Stats();
       this.container.appendChild(this.stats.dom);
 
-      clientWidth = 500;
+      // clientWidth = 500;
       let clientWidth = 500;
       let clientHeight = 500;
 

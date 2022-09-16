@@ -3,7 +3,7 @@
     <LoadingScreen v-if="loading" />
 
     <div v-else>
-      <!-- <Particles /> -->
+      <Particles />
 
       <Header />
       <v-main id="v_main">
@@ -11,12 +11,9 @@
           <Nuxt />
         </v-container>
       </v-main>
-      <!-- <v-footer color="transparent" app>
-        <span>&copy; {{ new Date().getFullYear() }}</span>
-      </v-footer> -->
+
     </div>
 
-    <!-- <ModelsChain /> -->
   </v-app>
 </template>
 

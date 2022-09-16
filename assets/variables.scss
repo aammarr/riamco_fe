@@ -17,6 +17,10 @@ $primary: #16267d;
   height: 100%;
 }
 
+.t-h-screen {
+  height: calc(100vh - 100px) !important;
+}
+
 .full-screen {
   height: calc(100vh - 120px);
 }
