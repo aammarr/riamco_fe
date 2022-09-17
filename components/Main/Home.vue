@@ -1,5 +1,5 @@
 <template>
-  <v-container class="t-h-screen" >
+  <v-container class="t-h-screen">
     <v-row class="t-h-full" justify="center" align="center">
       <v-col
         align-self="center"
@@ -11,9 +11,8 @@
         <div class="jumboltron">
           <LogoBlue class="mx-auto" />
 
-          <h1 id="title" class="t-text-5xl font-weight-bold primary--text">
-            Mission Statement
-          </h1>
+          <UtilsTitle :text="'Mission Statement'" />
+
           <h2 class="t-text-2xl my-5 t-font-mono">
             Creating a Closed Loop Economy for Plastics
           </h2>
@@ -62,9 +61,7 @@ export default {
       loaderAnim: null,
     };
   },
-  methods: {
-   
-  },
+  methods: {},
   mounted() {
     //this.gsap.set(".jumboltron", { scale: 0.8 });
     this.gsap.timeline().from(".jumboltron", {

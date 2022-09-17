@@ -1,5 +1,16 @@
 <template>
-  <div class="loading-bg d-flex flex-column full-height justify-space-around background">
+  <div
+    class="
+      loading-bg
+      d-flex
+      flex-column
+      full-height
+      justify-space-around
+      background
+      mx-auto
+      t-max-w-xl
+    "
+  >
     <div class="loader-bg">
       <v-img
         alt="Riamco Logo"
@@ -8,13 +19,24 @@
         max-height="450"
         id="logo_loader"
         contain
-        src="/svg/riamco-logo.svg"
-        lazy-src="/svg/riamco-logo.svg"
+        src="/svg/riamco-logo-color.svg"
+        lazy-src="/svg/riamco-logo-color.svg"
       />
     </div>
 
-    <div class="d-flex align-center justify-space-between font-weight-light px-15">
-      <span class="loading-text">Loading...</span>
+    <div
+      class="
+        d-flex
+        align-center
+        loading-text
+        justify-space-between
+        font-weight-light
+        t-text-xl
+        primary--text
+        px-15
+      "
+    >
+      <span>Loading...</span>
       <span>{{ loaded }}</span>
     </div>
   </div>
@@ -59,8 +81,7 @@ export default {
   },
 
   mounted() {
-
-    this.doProgress()
+    this.doProgress();
 
     this.gsap.fromTo(
       "#logo_loader",
@@ -103,7 +124,4 @@ export default {
   background-color: #ffff;
   height: 100%;
 }
-
-
-
 </style>

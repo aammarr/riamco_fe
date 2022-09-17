@@ -1,9 +1,16 @@
 <template>
   <v-container
-    class="t-h-screen d-flex flex-column align-center justify-center"
+    class="
+      t-h-screen
+      d-flex
+      flex-column
+      align-center
+      justify-center
+      contact_section
+    "
   >
     <v-card
-      color="#29af8d"
+      color="primary__bg__theme"
       max-width="1200"
       width="100%"
       elevation="20"
@@ -79,13 +86,24 @@
     <script>
 export default {
   mounted() {
-    this.gsap.timeline().from(".contact-card", {
-      duration: 2,
-      delay: 0.5,
-      opacity: 0,
-      yPercent: 10,
-      ease: "bounce",
-    });
+    this.gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".contact_section",
+          markers: false,
+          scrub: true,
+          pin: true,
+        },
+      })
+      .from(".contact-card", {
+        duration: 1,
+        scrub: true,
+        pin: true,
+        delay: 0.5,
+        opacity: 0,
+        y: -200,
+        ease: "bounce",
+      });
   },
 };
 </script>

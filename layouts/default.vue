@@ -11,9 +11,7 @@
           <Nuxt />
         </v-container>
       </v-main>
-
     </div>
-
   </v-app>
 </template>
 

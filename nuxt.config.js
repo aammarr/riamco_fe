@@ -1,4 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from "vuetify/es5/util/colors";
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -6,31 +6,27 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Closed Loop Recycling System',
-    title: 'Riamco',
+    titleTemplate: "%s - Closed Loop Recycling System",
+    title: "Riamco",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
+      { name: "format-detection", content: "telephone=no" },
     ],
     link: [
-      { rel: 'icon', type: 'image/svg', href: 'svg/riamco-logo-white.svg' }
-    ]
+      { rel: "icon", type: "image/svg", href: "svg/riamco-logo-color.svg" },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/fonts/Montserrat.css'
-  ],
+  css: ["~/assets/fonts/Montserrat.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '~/plugins/gsap.js'
-  ],
+  plugins: ["~/plugins/gsap.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -38,46 +34,45 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
-    '@nuxt/postcss8',
+    "@nuxtjs/vuetify",
+    "@nuxt/postcss8",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    '@nuxtjs/tailwindcss'
+    "@nuxtjs/axios",
+    "@nuxtjs/tailwindcss",
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: "/",
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ["~/assets/variables.scss"],
     theme: {
       dark: false,
       themes: {
         light: {
-          primary: '#16267d',
+          primary: "#16267d",
         },
         dark: {
-          primary: '#16267d',
+          primary: "#16267d",
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+          success: colors.green.accent3,
+        },
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
-}
+  build: {},
+};

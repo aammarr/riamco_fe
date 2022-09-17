@@ -21,7 +21,7 @@ export default {
             },
           },
           color: {
-            value: "#3447f5",
+            value: "#16267d", //"#3447f5",
           },
           shape: {
             type: "circle",
