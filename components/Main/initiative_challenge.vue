@@ -1,20 +1,13 @@
 <template>
-  <v-container
-    class="
-      d-flex
-      flex-column
+  <v-container class="
+      
       t-h-screen
-      align-center
-      justify-center
+     
       challenge__cont__section
-    "
-  >
+    ">
     <v-row justify="center" align="center" class="t-h-full challenge__section">
-      <v-col align-self="center">
-        <div
-          class="t-font-sans t-text-xl text-left"
-          id="challenge__section__left"
-        >
+      <v-col cols="12" xs="12" sm="12" md="12" lg="6" xl="6" align-self="center">
+        <div class="t-font-sans t-text-xl text-left" id="challenge__section__left">
           <UtilsTitle :text="'The Challenge'" />
           <p class="py-5">
             What to do with billions of tones of plastic waste piling up in
@@ -32,7 +25,7 @@
         </div>
       </v-col>
 
-      <v-col align-self="center">
+      <v-col cols="12" xs="12" sm="12" md="12" lg="6" xl="6" align-self="center">
         <div id="challenge__section__right">
           <video autoplay muted loop>
             <source src="videos/site_overview.mp4" type="video/mp4" />
@@ -46,28 +39,30 @@
 <script>
 export default {
   mounted() {
-    this.gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: ".challenge__cont__section",
-          markers: true,
-          scrub: true,
-          pin: true,
-        },
-      })
-      .from("#challenge__section__right video", {
-        duration: 1,
-        opacity: 0,
-        yPercent: 100,
-        ease: "power2.in",
-      })
-      .from("#challenge__section__left", {
-        duration: 1,
-        opacity: 0,
-        xPercent: 100,
-        stagger: 0.1,
-        ease: "power2.inOut",
-      });
+    if (!this.$vuetify.breakpoint.mobile) {
+      this.gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".challenge__cont__section",
+            markers: true,
+            scrub: true,
+            pin: true,
+          },
+        })
+        .from("#challenge__section__right video", {
+          duration: 1,
+          opacity: 0,
+          yPercent: 100,
+          ease: "power2.in",
+        })
+        .from("#challenge__section__left", {
+          duration: 1,
+          opacity: 0,
+          xPercent: 100,
+          stagger: 0.1,
+          ease: "power2.inOut",
+        });
+    }
   },
 };
 </script>
@@ -75,7 +70,8 @@ export default {
 <style lang="scss">
 #challenge__section__right {
   video {
-    max-width: 600px;
+    // max-width: 600px;
+    width: 100%;
     margin: auto;
     border-radius: 20px !important;
   }

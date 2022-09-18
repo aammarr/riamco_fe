@@ -3,13 +3,8 @@
     <section class="main_section">
       <v-container class="d-flex align-center justify-center t-h-full">
         <v-row justify="center" align="center">
-          <v-col
-            align-self="start"
-            class="t-h-full d-flex flex-column justify-center"
-            cols="12"
-            sm="8"
-            md="6"
-          >
+          <v-col align-self="start" class="t-h-full d-flex flex-column justify-center" cols="12" sm="12" md="6" lg="6"
+            xl="6">
             <div class="main_content">
               <LogoBlue class="mx-auto" />
 
@@ -22,7 +17,7 @@
             </div>
           </v-col>
 
-          <v-col cols="12" sm="8" md="6">
+          <v-col cols="12" sm="12" md="6" lg="6" xl="6">
             <ModelsChain />
           </v-col>
         </v-row>
@@ -100,21 +95,12 @@
 
       <div class="p-wrap">
         <div class="panel panel__section__one d-flex flex-column">
-          <v-card
-            v-for="(card, index) in initiative_cards"
-            :key="`card-${index}`"
-            :class="card.class"
-            style="z-index: 1"
-            max-width="400"
-            elevation="10"
-            rounded="md"
-            class="my-2"
-          >
+          <v-card v-for="(card, index) in initiative_cards" :key="`card-${index}`" :class="card.class"
+            style="z-index: 1" max-width="400" elevation="10" rounded="md" class="my-2">
             <v-card-text class="pa-1">
               <div class="d-flex flex-row align-center justify-space-between">
                 <div class="ma-3">
-                  <div
-                    class="
+                  <div class="
                       t-rounded-xl
                       glass__simple__bg
                       d-flex
@@ -122,14 +108,8 @@
                       align-center
                       justify-center
                       t-h-28 t-w-28
-                    "
-                  >
-                    <v-img
-                      src="/svg/riamco-logo.svg"
-                      contain
-                      height="64px"
-                      width="64px"
-                    ></v-img>
+                    ">
+                    <v-img src="/svg/riamco-logo.svg" contain height="64px" width="64px"></v-img>
 
                     <span>{{ card.title }}</span>
                   </div>
@@ -154,24 +134,17 @@
       </div>
     </section>
 
-    <section
-      style="background: rgba(0, 0, 0, 0.8)"
-      class="t-h-full project_closed_loop"
-    >
-      <v-container
-        class="
+    <section style="background: rgba(0, 0, 0, 0.8)" class="t-h-full project_closed_loop">
+      <v-container class="
           t-h-full
           white--text
           d-flex
           align-center
           justify-center
           flex-column
-        "
-      >
+        ">
         <h1 class="display-3 text-left">Project Closed Loop</h1>
-        <div
-          class="d-flex ma-5 my-10 align-start justify-space-around white--text"
-        >
+        <div class="d-flex ma-5 my-10 align-start justify-space-around white--text">
           <div class="pa-5 t-max-w-md">
             <h1>Phase 1</h1>
             <h2 class="display-1 text-left py-5">
@@ -248,7 +221,7 @@
   </div>
 </template>
   
-  <script>
+<script>
 import Scrollbar from "smooth-scrollbar";
 export default {
   data() {

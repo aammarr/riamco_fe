@@ -4,15 +4,15 @@
 
     <!-- <MainInitiative_2 id="our_initiative" /> -->
 
-    <Initiative_2 class="section" id="our_initiative" />
+    <Initiative_2 :class="$vuetify.breakpoint.mobile ? 'mt-15' : ''" id="our_initiative" />
 
-    <Initiative_challenge />
+    <Initiative_challenge :class="$vuetify.breakpoint.mobile ? 'mt-15' : ''" />
 
-    <MainInitiativeSolution />
+    <MainInitiativeSolution :class="$vuetify.breakpoint.mobile ? 'mt-15' : ''" />
 
-    <MainProjectLoop class="section" id="project_closed_loop" />
+    <MainProjectLoop :class="$vuetify.breakpoint.mobile ? 'mt-15' : ''" id="project_closed_loop" />
 
-    <MainContact class="section" id="contact" />
+    <MainContact :class="$vuetify.breakpoint.mobile ? 'mt-15' : ''" id="contact" />
   </div>
 </template>
 

@@ -1,58 +1,55 @@
 <template>
   <div>
-    <v-app-bar
-      hide-on-scroll
-      color="transparent"
-      elevation="0"
-      fixed
-      height="100"
-      app
-    >
-      <v-btn
-        v-if="$vuetify.breakpoint.mobile"
-        class="mx-5 white"
-        fab
-        @click.stop="drawer = !drawer"
-      >
+    <v-app-bar hide-on-scroll color="transparent" elevation="0" fixed height="100" app>
+      <v-btn v-if="$vuetify.breakpoint.mobile" class="mx-5 white" fab @click.stop="drawer = !drawer">
         <v-icon dark>mdi-menu</v-icon>
       </v-btn>
-      <v-row justify="center">
-        <v-col v-if="!$vuetify.breakpoint.mobile" align="center" cols="3">
+
+
+      <v-toolbar-title v-if="$vuetify.breakpoint.mobile">
+        <Logo />
+      </v-toolbar-title>
+
+      <v-navigation-drawer v-model="drawer" light hide-overlay v-if="$vuetify.breakpoint.mobile" fixed app>
+        <v-list color="primary--text">
+          <v-list-item v-for="btn, i in buttons" :key="i" :to="btn.to" link>
+
+
+            <v-list-item-content>
+              <v-list-item-title>{{ btn.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+
+
+
+
+      <v-row v-if="!$vuetify.breakpoint.xs" justify="center">
+        <v-col align="center" cols="3">
         </v-col>
 
-        <v-col v-if="!$vuetify.breakpoint.mobile" cols="6"
-          ><div class="header-menu-lg">
-            <div
-              class="
+        <v-col cols="6">
+          <div class="header-menu-lg">
+            <div class="
                 glass-bg
                 d-flex
                 align-center
                 justify-center
                 no-wrap
                 t-w-full
-              "
-            >
-              <v-btn
-                @click="home_animation()"
-                text
-                dark
-                height="50"
-                class="font-weight-bold"
-                :active-class="`${
-                  index == 0 ? 'left-border-radius' : ''
-                } active_menu_btn ${index == 3 ? 'right-border-radius' : ''}`"
-                :to="btn.to"
-                :width="`${100 / buttons.length}%`"
-                v-for="(btn, index) in buttons"
-                :key="`nav-btn-${index}}`"
-              >
+              ">
+              <v-btn @click="home_animation()" text dark height="50" class="font-weight-bold" :active-class="`${
+                index == 0 ? 'left-border-radius' : ''
+              } active_menu_btn ${index == 3 ? 'right-border-radius' : ''}`" :to="btn.to"
+                :width="`${100 / buttons.length}%`" v-for="(btn, index) in buttons" :key="`nav-btn-${index}}`">
                 <span class="t-text-base">{{ btn.title }}</span>
               </v-btn>
             </div>
           </div>
         </v-col>
 
-        <v-col align="center" :cols="$vuetify.breakpoint.mobile ? 12 : 3">
+        <v-col align="center" cols="3">
           <Logo />
         </v-col>
       </v-row>
@@ -93,18 +90,16 @@ export default {
     };
   },
   methods: {
-    home_animation() {},
+    home_animation() { },
   },
 };
 </script>
 <style lang="scss">
 .header-menu-lg {
-  background: linear-gradient(
-    45deg,
-    rgba(41, 175, 141, 1) 0%,
-    rgba(57, 191, 232, 1) 35%,
-    rgba(82, 90, 191, 1) 81%
-  );
+  background: linear-gradient(45deg,
+      rgba(41, 175, 141, 1) 0%,
+      rgba(57, 191, 232, 1) 35%,
+      rgba(82, 90, 191, 1) 81%);
   border-radius: 50px;
   padding: 5px 5px;
   color: white;

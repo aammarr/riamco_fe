@@ -1,19 +1,17 @@
 <template>
-  <section style="" class="full-screen project_closed_loop">
-    <v-container
-      class="
+  <section :class="$vuetify.breakpoint.mobile ? '' : 'full-screen'" class="project_closed_loop">
+    <v-container class="
         project__section
         t-h-full
         d-flex
         align-center
         justify-center
         flex-column
-      "
-    >
-      <h1 class="t-text-5xl my-5 t-capitalize project__section__title">
+      ">
+      <h1 :class="$vuetify.breakpoint.mobile ? 't-text-3xl font-weight-bold' : 't-text-5xl'" class="my-5 t-capitalize project__section__title">
         Project Closed Loop
       </h1>
-      <div class="d-flex ma-5 my-10 align-start justify-space-around">
+      <div class="d-flex flex-wrap ma-5 my-10 align-start justify-space-around">
         <div class="pa-5 t-max-w-lg project__section__col_1">
           <h1 class="font-weight-bold">Phase 1</h1>
           <h2 class="t-text-3xl text-left py-5">
@@ -41,42 +39,44 @@
   </section>
 </template>
   
-  <script>
+<script>
 export default {
   mounted() {
-    this.gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: ".project_closed_loop",
-          // start: "top top",
-          // end: "bottom bottom",
-          markers: false,
-          scrub: true,
-          pin: true,
-        },
-      })
-      .from(".project__section__title", {
-        duration: 1.0,
-        opacity: 0,
-        yPercent: -20,
-        ease: "power2.inOut",
-      })
+    if (!this.$vuetify.breakpoint.mobile) {
+      this.gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".project_closed_loop",
+            // start: "top top",
+            // end: "bottom bottom",
+            markers: false,
+            scrub: true,
+            pin: true,
+          },
+        })
+        .from(".project__section__title", {
+          duration: 1.0,
+          opacity: 0,
+          yPercent: -20,
+          ease: "power2.inOut",
+        })
 
-      .from(".project__section__col_1", {
-        duration: 1,
-        delay: 1.5,
-        opacity: 0,
-        xPercent: -20,
-        ease: "power4.inOut",
-      })
+        .from(".project__section__col_1", {
+          duration: 1,
+          delay: 1.5,
+          opacity: 0,
+          xPercent: -20,
+          ease: "power4.inOut",
+        })
 
-      .from(".project__section__col_2", {
-        duration: 1,
-        delay: 1.5,
-        opacity: 0,
-        xPercent: 20,
-        ease: "power4.inOut",
-      });
+        .from(".project__section__col_2", {
+          duration: 1,
+          delay: 1.5,
+          opacity: 0,
+          xPercent: 20,
+          ease: "power4.inOut",
+        });
+    }
   },
 };
 </script>

@@ -1,12 +1,12 @@
 <template>
-  <div id="scene-container" ref="sceneContainer"></div>
+  <div style="width: 100%; height: 100%" id="scene-container contsc" ref="sceneContainer"></div>
 </template>
   
-  <script>
+<script>
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import Stats from "stats.js";
+// import Stats from "stats.js";
 
 export default {
   data() {
@@ -25,10 +25,9 @@ export default {
       this.container = this.$refs.sceneContainer;
 
       // add stats
-      this.stats = new Stats();
-      this.container.appendChild(this.stats.dom);
+      // this.stats = new Stats();
+      // this.container.appendChild(this.stats.dom);
 
-      // clientWidth = 500;
       let clientWidth = window.innerWidth;
       let clientHeight = window.innerHeight;
 
@@ -103,33 +102,45 @@ export default {
     },
     render() {
       this.renderer.render(this.scene, this.camera);
-      this.stats.update();
+      // this.stats.update();
     },
   },
   mounted() {
     this.init();
+
+    // document.querySelector('canvas').addEventListener('click', function (e) {
+
+    //   console.log('canvas');
+
+    //   e.stopPropagation();
+
+    // });
   },
 };
 </script>
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style >
+<style >
 h3 {
   margin: 40px 0 0;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
+
 /* a {
     color: #42b983;
   } */
 #scene-container {
   height: 100%;
+  left: 0;
   /* position: absolute; */
 }
 

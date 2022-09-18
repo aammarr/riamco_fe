@@ -1,13 +1,8 @@
 <template>
   <v-container class="t-h-screen">
-    <ModelsChain class="t-absolute" id="enzyme_model" />
     <v-row class="t-h-full" justify="center" align="center">
-      <v-col
-        align="start"
-        align-self="start"
-        class="t-h-full d-flex flex-column justify-center align-start"
-        cols="12"
-      >
+      <v-col align="start" align-self="start" class="t-h-full d-flex flex-column justify-center align-start" cols="12">
+        <!-- <ModelsChain class="t-absolute t-left-0" id="enzyme_model" /> -->
         <div class="jumboltron">
           <LogoBlue class="mx-auto" />
 
@@ -23,6 +18,10 @@
         <ModelsChain id="enzyme_model" />
       </v-col> -->
     </v-row>
+   
+
+    
+
   </v-container>
 </template>
 
@@ -87,6 +86,7 @@ export default {
   height: 100%;
   display: block;
 }
+
 #c {
   width: 100%;
   height: 100%;
