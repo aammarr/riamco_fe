@@ -10,16 +10,7 @@
         flex-column
       "
     >
-      <h1
-        class="
-          display-3
-          text-left
-          t-text-5xl
-          my-5
-          t-capitalize
-          project__section__title
-        "
-      >
+      <h1 class="t-text-5xl my-5 t-capitalize project__section__title">
         Project Closed Loop
       </h1>
       <div class="d-flex ma-5 my-10 align-start justify-space-around">
@@ -28,7 +19,7 @@
           <h2 class="t-text-3xl text-left py-5">
             Commercialization and Testing
           </h2>
-          <p>
+          <p class="t-font-sans t-text-xl">
             The completion of Riamco’s commercial laboratory and testing
             facility. This state-of-the-art research and development facility
             and specialized team of scientists will play a major role in
@@ -39,7 +30,7 @@
         <div class="pa-5 t-max-w-lg project__section__col_2">
           <h1 class="font-weight-bold">Phase 2</h1>
           <h2 class="t-text-3xl text-left py-5">Operational</h2>
-          <p>
+          <p class="t-font-sans t-text-xl">
             The completion of Riamco’s state of the art enzymatic PET Recycling
             Plant. This plant will have a recycling capacity of 100,000 tons of
             PET plastic waste per year.

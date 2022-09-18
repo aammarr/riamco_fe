@@ -30,19 +30,19 @@
             </div>
 
             <div class="form_action_btns">
-              <div class="t-w-40 d-flex align-center">
+              <div class="d-flex align-center">
                 <v-icon>mdi-phone</v-icon>
 
                 <span>+123 456 789</span>
               </div>
 
-              <div class="t-w-40 d-flex align-center">
+              <div class="d-flex align-center">
                 <v-icon>mdi-mail</v-icon>
 
                 <span>abc@mail.com</span>
               </div>
 
-              <div class="t-w-40 d-flex align-center">
+              <div class="d-flex align-center">
                 <v-icon>mdi-map-marker</v-icon>
 
                 <span>New York, NY</span>
@@ -119,9 +119,11 @@ export default {
   div {
     padding: 10px;
     cursor: pointer;
+    width: 200px;
 
     span {
       margin-left: 20px;
+      font-size: 1rem;
     }
   }
 }

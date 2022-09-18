@@ -19,7 +19,7 @@
       >
         <div id="initiative__section__left">
           <UtilsTitle :text="'Our Initiative'" />
-          <p class="t-font-sans black--text t-text-lg text-left py-5">
+          <p class="t-font-sans black--text t-text-xl text-left py-5">
             {{ content }}
           </p>
           <v-btn fab color="primary" large>
@@ -59,7 +59,7 @@
                     "
                   >
                     <v-img
-                      src="/svg/riamco-logo.svg"
+                      :src="card.imgURL"
                       contain
                       height="64px"
                       width="64px"
@@ -72,7 +72,7 @@
                 <div>
                   <p
                     class="
-                      t-font-sans t-font-semibold t-text-sm
+                      t-font-sans t-font-semibold t-text-base
                       text-left
                       mb-0
                       pa-2
@@ -105,11 +105,13 @@ export default {
         {
           title: "Vision",
           class: "t-left-12",
+          imgURL: "/img/vision.png",
           text: "Riamco seeks to establish a full circular approach to how we use and dispose of plastics by creating a closed loop system, from recycled PET to new PET products and eliminating plastic waste.",
         },
         {
           title: "Mission",
           class: "t-relative t-right-12",
+          imgURL: "/img/mission.png",
           text: "To Achieve net zero plastic leakage into our ecosystems and a more sustainable future for the UAE and the world.",
         },
       ],

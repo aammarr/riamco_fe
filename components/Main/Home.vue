@@ -1,12 +1,12 @@
 <template>
   <v-container class="t-h-screen">
+    <ModelsChain class="t-absolute" id="enzyme_model" />
     <v-row class="t-h-full" justify="center" align="center">
       <v-col
-        align-self="center"
-        class="t-h-full d-flex flex-column justify-center align-center"
+        align="start"
+        align-self="start"
+        class="t-h-full d-flex flex-column justify-center align-start"
         cols="12"
-        sm="8"
-        md="6"
       >
         <div class="jumboltron">
           <LogoBlue class="mx-auto" />
@@ -19,9 +19,9 @@
         </div>
       </v-col>
 
-      <v-col cols="12" sm="8" md="6">
-        <!-- <ModelsChain id="enzyme_model" /> -->
-      </v-col>
+      <!-- <v-col cols="12" xs="12" sm="12" md="6" lg="6">
+        <ModelsChain id="enzyme_model" />
+      </v-col> -->
     </v-row>
   </v-container>
 </template>

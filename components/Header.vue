@@ -1,6 +1,13 @@
 <template>
   <div>
-    <v-app-bar color="transparent" elevation="0" fixed height="100" app>
+    <v-app-bar
+      hide-on-scroll
+      color="transparent"
+      elevation="0"
+      fixed
+      height="100"
+      app
+    >
       <v-btn
         v-if="$vuetify.breakpoint.mobile"
         class="mx-5 white"

@@ -11,9 +11,12 @@
   >
     <v-row justify="center" align="center" class="t-h-full challenge__section">
       <v-col align-self="center">
-        <div id="challenge__section__left">
+        <div
+          class="t-font-sans t-text-xl text-left"
+          id="challenge__section__left"
+        >
           <UtilsTitle :text="'The Challenge'" />
-          <p class="t-font-sans t-text-lg text-left py-5">
+          <p class="py-5">
             What to do with billions of tones of plastic waste piling up in
             landfills and polluting our natural lands and water?
           </p>
@@ -72,7 +75,7 @@ export default {
 <style lang="scss">
 #challenge__section__right {
   video {
-    max-width: 900px;
+    max-width: 600px;
     margin: auto;
     border-radius: 20px !important;
   }

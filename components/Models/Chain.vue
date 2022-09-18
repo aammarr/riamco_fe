@@ -29,8 +29,8 @@ export default {
       this.container.appendChild(this.stats.dom);
 
       // clientWidth = 500;
-      let clientWidth = 500;
-      let clientHeight = 500;
+      let clientWidth = window.innerWidth;
+      let clientHeight = window.innerHeight;
 
       // add camera
       const fov = 60; // Field of view
@@ -82,7 +82,7 @@ export default {
       //const file_path = '/three-assets/RobotExpressive.glb' //'/three-assets/RobotExpressive.glb'
 
       loader.load(
-        "models/all_chain.glb",
+        "models/RobotExpressive.glb",
         (gltf) => {
           const model = gltf.scene;
           model.traverse((child) => {
@@ -130,6 +130,11 @@ li {
   } */
 #scene-container {
   height: 100%;
+  /* position: absolute; */
+}
+
+#scene-container:focus {
+  border: none !important;
 }
 </style>
   

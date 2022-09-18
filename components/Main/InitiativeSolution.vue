@@ -15,7 +15,7 @@
         <div id="solution__section__left">
           <div class="solution__content">
             <UtilsTitle :text="'The Solution'" />
-            <p class="t-font-sans t-text-lg text-left py-5">
+            <p class="t-font-sans t-text-xl text-left py-5">
               Riamco introduces the UAE’s first Full Circular Closed Loop
               Recycling System for PET Plastics.
             </p>
@@ -27,7 +27,7 @@
             >
               What This Means?
             </h2>
-            <p class="t-font-sans t-text-lg text-left py-5 what_means_content">
+            <p class="t-font-sans t-text-xl text-left py-5 what_means_content">
               A circular economy is restorative and regenerative by design. This
               means materials constantly flow around a 'closed loop' system,
               rather than being used once and then discarded. In the case of
