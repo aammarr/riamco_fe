@@ -23,11 +23,7 @@
             </div>
 
             <div class="form_action_btns">
-              <div class="d-flex align-center">
-                <v-icon>mdi-phone</v-icon>
 
-                <span>+123 456 789</span>
-              </div>
 
               <div class="d-flex align-center">
                 <v-icon>mdi-mail</v-icon>
@@ -43,7 +39,8 @@
             </div>
           </v-col>
 
-          <v-col class="form d-flex align-center justify-end">
+          <v-col class="form d-flex align-center"
+            :class="$vuetify.breakpoint.mobile ? 'justify-center' : 'justify-end'">
             <v-card elevation="5" width="400" flat class="pa-5">
               <label for="company">Company name</label>
               <v-text-field outlined dense placeholder="Riamco" />

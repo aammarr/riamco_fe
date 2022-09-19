@@ -21,7 +21,7 @@ export default {
             },
           },
           color: {
-            value: "#16267d", //"#3447f5",
+            value: "#525abf", //"#3447f5",
           },
           shape: {
             type: "circle",
@@ -39,7 +39,7 @@ export default {
             },
           },
           opacity: {
-            value: 0.3,
+            value: 2,
             random: true,
             anim: {
               enable: true,

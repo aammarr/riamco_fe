@@ -7,10 +7,11 @@
       initiative__cont__section
     ">
     <v-row justify="center" class="t-h-full" align="center">
-      <v-col align-self="center" class="t-h-full d-flex flex-column justify-center" cols="12" xs="12" sm="12" md="12" lg="6" xl="6">
+      <v-col align-self="center" class="t-h-full d-flex flex-column justify-center" cols="12" xs="12" sm="12" md="12"
+        lg="6" xl="6">
         <div id="initiative__section__left">
           <UtilsTitle :text="'Our Initiative'" />
-          <p class="t-font-sans black--text t-text-xl text-left py-5">
+          <p class="t-font-sans black--text t-text-2xl t-text-justify py-5">
             {{ content }}
           </p>
           <v-btn fab color="primary" large>
@@ -20,13 +21,17 @@
       </v-col>
 
       <v-col align-self="center" align="center" cols="12" xs="12" sm="12" md="12" lg="6" xl="6">
-        <div id="initiative__section__right" :style="$vuetify.breakpoint.mobile ? 'height: 750px' : 'height: 550px !important;'"  class="d-flex flex-column align-center justify-center">
+        <div id="initiative__section__right"
+          :style="$vuetify.breakpoint.mobile ? 'height: 750px' : 'height: 550px !important;'"
+          class="d-flex flex-column align-center justify-center">
           <v-card v-for="(card, index) in initiative_cards" :key="`card-${index}`" :id="`card-${index + 1}`"
-            :class="$vuetify.breakpoint.mobile ? '' : card.class" style="z-index: 1" :max-width="$vuetify.breakpoint.mobile ? 300 : 500" elevation="10" rounded="md" class="my-2">
+            :class="$vuetify.breakpoint.mobile ? '' : card.class" style="z-index: 1"
+            :max-width="$vuetify.breakpoint.mobile ? 300 : 500" elevation="10" rounded="md" class="my-2">
             <v-card-text class="pa-1">
-              <div class="d-flex flex-row align-center" :class="$vuetify.breakpoint.mobile ? 'justify-center flex-wrap' : 'justify-space-between'">
+              <div class="d-flex flex-row align-center"
+                :class="$vuetify.breakpoint.mobile ? 'justify-center flex-wrap' : 'justify-space-between'">
                 <div class="ma-3">
-                  <div  class="
+                  <div class="
                       t-rounded-xl
                       glass__simple__bg
                       d-flex
@@ -44,9 +49,9 @@
                 <div>
                   <p class="
                       t-font-sans t-font-semibold t-text-base
-                      text-left
+                      t-text-justify
                       mb-0
-                      pa-2
+                      pa-3
                     ">
                     {{ card.text }}
                   </p>
@@ -74,14 +79,14 @@ export default {
       initiative_cards: [
         {
           title: "Vision",
-          class: "t-left-12",
-          imgURL: "/img/vision.png",
+          class: "",
+          imgURL: "/svg/riamco-logo-color.svg",
           text: "Riamco seeks to establish a full circular approach to how we use and dispose of plastics by creating a closed loop system, from recycled PET to new PET products and eliminating plastic waste.",
         },
         {
           title: "Mission",
-          class: "t-relative t-right-12",
-          imgURL: "/img/mission.png",
+          class: "",
+          imgURL: "/svg/riamco-logo-color.svg",
           text: "To Achieve net zero plastic leakage into our ecosystems and a more sustainable future for the UAE and the world.",
         },
       ],
@@ -94,6 +99,7 @@ export default {
           scrollTrigger: {
             trigger: ".initiative__cont__section",
             markers: false,
+
             scrub: true,
             pin: true,
           },
@@ -140,6 +146,6 @@ export default {
       rgba(82, 90, 191, 1) 81%);
   max-width: 570px;
   border-radius: 50px;
- 
+
 }
 </style>

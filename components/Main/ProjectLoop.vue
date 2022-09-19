@@ -8,16 +8,18 @@
         justify-center
         flex-column
       ">
-      <h1 :class="$vuetify.breakpoint.mobile ? 't-text-3xl font-weight-bold' : 't-text-5xl'" class="my-5 t-capitalize project__section__title">
+      <h1 :class="$vuetify.breakpoint.mobile ? 't-text-3xl font-weight-bold' : 't-text-5xl'"
+        class="my-5 t-capitalize project__section__title">
         Project Closed Loop
       </h1>
-      <div class="d-flex flex-wrap ma-5 my-10 align-start justify-space-around">
-        <div class="pa-5 t-max-w-lg project__section__col_1">
-          <h1 class="font-weight-bold">Phase 1</h1>
-          <h2 class="t-text-3xl text-left py-5">
-            Commercialization and Testing
+      <div class="d-flex flex-wrap ma-5 my-10 align-start"
+        :class="$vuetify.breakpoint.mdAndDown ? 't-text-lg' : ' t-text-2xl justify-space-around'">
+        <div class="pa-5 project__section__col_1 t-w-1/2	">
+
+          <h2 class="t-text-3xl text-left font-weight-bold py-5">
+            Phase 1: Commercialization and Testing
           </h2>
-          <p class="t-font-sans t-text-xl">
+          <p class="t-font-sans t-text-justify">
             The completion of Riamco’s commercial laboratory and testing
             facility. This state-of-the-art research and development facility
             and specialized team of scientists will play a major role in
@@ -25,10 +27,10 @@
           </p>
         </div>
 
-        <div class="pa-5 t-max-w-lg project__section__col_2">
-          <h1 class="font-weight-bold">Phase 2</h1>
-          <h2 class="t-text-3xl text-left py-5">Operational</h2>
-          <p class="t-font-sans t-text-xl">
+        <div class="pa-5 project__section__col_2 t-w-1/2">
+
+          <h2 class="t-text-3xl text-left font-weight-bold py-5">Phase 2: Operational</h2>
+          <p class="t-font-sans t-text-justify">
             The completion of Riamco’s state of the art enzymatic PET Recycling
             Plant. This plant will have a recycling capacity of 100,000 tons of
             PET plastic waste per year.
@@ -85,4 +87,8 @@ export default {
 // .project_closed_loop {
 //   background: rgba(0, 0, 0, 0.9);
 // }
+
+.c_h {
+  height: 900px;
+}
 </style>

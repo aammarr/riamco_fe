@@ -1,23 +1,15 @@
 <template>
   <v-container class="t-h-screen t-relative t-left-0">
-    <ModelsChain
-      v-if="!$vuetify.breakpoint.mobile"
-      class="t-absolute t-left-0 t-right-0 t-overflow-hidden"
-      id="enzyme_model"
-    />
+    <ModelsChain v-if="!$vuetify.breakpoint.mobile" class="t-absolute t-left-0 t-right-0 t-overflow-hidden"
+      id="enzyme_model" />
     <v-row class="t-h-full" justify="center" align="center">
-      <v-col
-        align="start"
-        align-self="start"
-        class="t-h-full d-flex flex-column justify-center align-start"
-        cols="12"
-      >
+      <v-col align="start" align-self="start" class="t-h-full d-flex flex-column justify-center align-start" cols="12">
         <div class="jumboltron">
-          <LogoBlue class="mx-auto" />
+          <LogoBlue id="riamco_logo" class="mx-auto" />
 
           <UtilsTitle :text="'Mission Statement'" />
 
-          <h2 class="t-text-2xl my-5 t-font-mono">
+          <h2 class="t-text-2xl my-5 t-font-sans">
             Creating a Closed Loop Economy for Plastics
           </h2>
         </div>
@@ -46,7 +38,6 @@ export default {
       // scale: 0.8,
       ease: "back",
     });
-    // .from("#enzyme_model", { xPercent: 100, duration: 0.2 });
   },
   components: { Chain },
 };
