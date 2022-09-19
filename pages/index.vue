@@ -2,8 +2,6 @@
   <div>
     <MainHome id="main" class="section home_section" />
 
-    <!-- <MainInitiative_2 id="our_initiative" /> -->
-
     <Initiative_2 :class="$vuetify.breakpoint.mobile ? 'mt-15' : ''" id="our_initiative" />
 
     <Initiative_challenge :class="$vuetify.breakpoint.mobile ? 'mt-15' : ''" />

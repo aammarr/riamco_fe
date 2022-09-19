@@ -32,12 +32,12 @@ export default {
       let clientHeight = window.innerHeight;
 
       // add camera
-      const fov = 60; // Field of view
+      const fov = 1//60; // Field of view
       const aspect = clientWidth / clientHeight;
       const near = 0.1; // the near clipping plane
       const far = 1000; // the far clipping plane
       const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-      camera.position.set(0, 5, 10);
+      camera.position.set(150, 5, 500);
       this.camera = camera;
 
       // create scene
@@ -45,21 +45,38 @@ export default {
       //this.scene.background = new THREE.Color('skyblue')
 
       // add lights
-      const ambientLight = new THREE.HemisphereLight(
-        0xffffff, // bright sky color
-        0x222222, // dim ground color
-        4 // intensity
-      );
+      // const ambientLight = new THREE.HemisphereLight(
+      //   0xffffff, // bright sky color
+      //   0x222222, // dim ground color
+      //   4 // intensity
+      // );
 
-      // const ambientLight = new THREE.HemisphereLight(0xffffff);
-      // ambientLight.intensity = 4;
+
+      const dirLight1 = new THREE.DirectionalLight(0xffffff);
+      dirLight1.position.set(1, 1, 1);
+
+
+      const dirLight2 = new THREE.DirectionalLight(0x002288);
+      dirLight2.position.set(- 1, - 1, - 1);
+
+
+      const ambientLight = new THREE.AmbientLight( 0x222222 ); //new THREE.HemisphereLight(0xffffff);
+      ambientLight.intensity = 4;
 
       const mainLight = new THREE.DirectionalLight(0xffffff, 4.0);
-      mainLight.position.set(10, 10, 10);
-      this.scene.add(ambientLight, mainLight);
+      mainLight.position.set(10, 10, 100);
+      this.scene.add(ambientLight, mainLight, dirLight1, dirLight2);
 
       // add controls
       this.controls = new OrbitControls(this.camera, this.container);
+      //this.controls.autoRotate = true;
+      this.controls.enableZoom = false;
+      // this.controls.target.x = -30
+      // this.controls.target0.x = -30
+
+      console.log('Target', this.controls);
+
+      this.controls.update();
 
       // create renderer
       this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -81,14 +98,22 @@ export default {
       //const file_path = '/three-assets/RobotExpressive.glb' //'/three-assets/RobotExpressive.glb'
 
       loader.load(
-        "models/RobotExpressive.glb",
+        "models/PET_COLORED.glb",
         (gltf) => {
           const model = gltf.scene;
-          model.traverse((child) => {
-            if (child.type == "SkinnedMesh") {
-              child.frustumCulled = false;
-            }
-          });
+          if (model) {
+            model.rotation.x += 100;
+            model.rotation.y += 10;
+
+            model.position.x += 3;
+            model.position.y += 1;
+
+          }
+          // model.traverse((child) => {
+          //   if (child.type == "SkinnedMesh") {
+          //     child.frustumCulled = false;
+          //   }
+          // });
 
           this.scene.add(model);
         },
@@ -96,11 +121,20 @@ export default {
         undefined
       );
 
+      window.addEventListener('resize', this.onWindowResize);
+
       this.renderer.setAnimationLoop(() => {
         this.render();
       });
     },
+    onWindowResize() {
+      this.camera.aspect = window.innerWidth / window.innerHeight;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
+    },
     render() {
+      this.controls.dispose();
+      this.controls.update();
       this.renderer.render(this.scene, this.camera);
       // this.stats.update();
     },

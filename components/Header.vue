@@ -25,7 +25,7 @@
 
 
 
-      <v-row v-if="!$vuetify.breakpoint.xs" justify="center">
+      <v-row v-if="!$vuetify.breakpoint.mobile" justify="center">
         <v-col align="center" cols="3">
         </v-col>
 

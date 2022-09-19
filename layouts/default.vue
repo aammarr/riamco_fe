@@ -3,7 +3,7 @@
     <LoadingScreen v-if="loading" />
 
     <div v-else>
-      <Particles />
+      <Particles class="t-w-full t-h-full" />
 
       <Header />
       <v-main id="v_main">

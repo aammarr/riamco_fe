@@ -1,8 +1,8 @@
 <template>
-  <v-container class="t-h-screen">
+  <v-container class="t-h-screen t-relative t-left-0">
+    <ModelsChain class="t-absolute t-left-0 t-right-0" id="enzyme_model" />
     <v-row class="t-h-full" justify="center" align="center">
       <v-col align="start" align-self="start" class="t-h-full d-flex flex-column justify-center align-start" cols="12">
-        <!-- <ModelsChain class="t-absolute t-left-0" id="enzyme_model" /> -->
         <div class="jumboltron">
           <LogoBlue class="mx-auto" />
 
@@ -13,10 +13,6 @@
           </h2>
         </div>
       </v-col>
-
-      <!-- <v-col cols="12" xs="12" sm="12" md="6" lg="6">
-        <ModelsChain id="enzyme_model" />
-      </v-col> -->
     </v-row>
    
 
@@ -28,36 +24,12 @@
 
 <script>
 import Chain from "../Models/Chain.vue";
-// import * as Three from "three/build/three.module";
-// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default {
   data() {
-    // const loader = new GLTFLoader();
-    // loader.load(
-    //   "D:AmmarFiverRiamco Docswetransfer_pet_rotating-blend_2022-09-04_1414Chain_A.glb",
-    //   function (gltf) {
-    //     scene.add(gltf.scene);
-    //   },
-    //   undefined,
-    //   function (error) {
-    //     console.error(error);
-    //   }
-    // );
+    
     return {
-      scene: null,
-      renderer: null,
-      camera: null,
-      model: null,
-      neck: null,
-      waist: null,
-      possibleAnims: null,
-      mixer: null,
-      idle: null,
-      clock: null,
-      currentlyAnimating: false,
-      raycaster: null,
-      loaderAnim: null,
+      
     };
   },
   methods: {},

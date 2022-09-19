@@ -1,31 +1,21 @@
 <template>
-  <div
-    class="
+  <div class="
       loading-bg
       d-flex
       flex-column
       full-height
+      align-self-center
       justify-space-around
       background
-      mx-auto
       t-max-w-xl
-    "
-  >
+    ">
     <div class="loader-bg">
-      <v-img
-        alt="Riamco Logo"
-        height="450"
-        width="450"
-        max-height="450"
-        id="logo_loader"
-        contain
-        src="/svg/riamco-logo-color.svg"
-        lazy-src="/svg/riamco-logo-color.svg"
-      />
+      <v-img alt="Riamco Logo" :height="$vuetify.breakpoint.mobile ? '250' : '450'" max-width="450"
+        :width="$vuetify.breakpoint.mobile ? '250' : '450'" max-height="450" id="logo_loader" contain
+        src="/svg/riamco-logo-color.svg" lazy-src="/svg/riamco-logo-color.svg" />
     </div>
 
-    <div
-      class="
+    <div class="
         d-flex
         align-center
         loading-text
@@ -34,8 +24,7 @@
         t-text-xl
         primary--text
         px-15
-      "
-    >
+      ">
       <span>Loading...</span>
       <span>{{ loaded }}</span>
     </div>
@@ -116,12 +105,12 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+
   text-align: center;
 }
 
 .loading-bg {
   background-color: #ffff;
-  height: 100%;
+
 }
 </style>

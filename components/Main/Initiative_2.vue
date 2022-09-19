@@ -24,7 +24,7 @@
           <v-card v-for="(card, index) in initiative_cards" :key="`card-${index}`" :id="`card-${index + 1}`"
             :class="$vuetify.breakpoint.mobile ? '' : card.class" style="z-index: 1" :max-width="$vuetify.breakpoint.mobile ? 300 : 500" elevation="10" rounded="md" class="my-2">
             <v-card-text class="pa-1">
-              <div class="d-flex flex-row flex-wrap align-center" :class="$vuetify.breakpoint.mobile ? 'justify-center' : 'justify-space-between'">
+              <div class="d-flex flex-row align-center" :class="$vuetify.breakpoint.mobile ? 'justify-center flex-wrap' : 'justify-space-between'">
                 <div class="ma-3">
                   <div  class="
                       t-rounded-xl

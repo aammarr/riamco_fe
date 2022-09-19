@@ -60,3 +60,9 @@ $primary: #16267d;
     rgba(82, 90, 191, 1) 81%
   );
 }
+
+canvas {
+  outline: none !important;
+  border: none !important;
+  overflow: hidden;
+}

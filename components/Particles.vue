@@ -2,7 +2,7 @@
   <div id="particles-js"></div>
 </template>
   
-  <script>
+<script>
 import "particles.js";
 export default {
   name: "particles",
@@ -39,7 +39,7 @@ export default {
             },
           },
           opacity: {
-            value: 0.6,
+            value: 0.3,
             random: true,
             anim: {
               enable: true,
@@ -133,9 +133,10 @@ export default {
 }  */
 #particles-js {
   position: absolute;
-  /* z-index: 99; */
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 </style>
   
