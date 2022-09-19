@@ -2,7 +2,7 @@
   <v-container class="t-h-screen t-relative t-left-0">
     <ModelsChain
       v-if="!$vuetify.breakpoint.mobile"
-      class="t-absolute t-left-0 t-right-0"
+      class="t-absolute t-left-0 t-right-0 t-overflow-hidden"
       id="enzyme_model"
     />
     <v-row class="t-h-full" justify="center" align="center">
