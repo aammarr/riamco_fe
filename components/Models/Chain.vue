@@ -1,5 +1,9 @@
 <template>
-  <div style="width: 100%; height: 100%" id="scene-container contsc" ref="sceneContainer"></div>
+  <div
+    style="width: 100%; height: 100%"
+    id="scene-container contsc"
+    ref="sceneContainer"
+  ></div>
 </template>
   
 <script>
@@ -32,7 +36,7 @@ export default {
       let clientHeight = window.innerHeight;
 
       // add camera
-      const fov = 1//60; // Field of view
+      const fov = 1.2; //60; // Field of view
       const aspect = clientWidth / clientHeight;
       const near = 0.1; // the near clipping plane
       const far = 1000; // the far clipping plane
@@ -51,16 +55,13 @@ export default {
       //   4 // intensity
       // );
 
-
       const dirLight1 = new THREE.DirectionalLight(0xffffff);
       dirLight1.position.set(1, 1, 1);
 
-
       const dirLight2 = new THREE.DirectionalLight(0x002288);
-      dirLight2.position.set(- 1, - 1, - 1);
+      dirLight2.position.set(-1, -1, -1);
 
-
-      const ambientLight = new THREE.AmbientLight( 0x222222 ); //new THREE.HemisphereLight(0xffffff);
+      const ambientLight = new THREE.AmbientLight(0x222222); //new THREE.HemisphereLight(0xffffff);
       ambientLight.intensity = 4;
 
       const mainLight = new THREE.DirectionalLight(0xffffff, 4.0);
@@ -74,7 +75,7 @@ export default {
       // this.controls.target.x = -30
       // this.controls.target0.x = -30
 
-      console.log('Target', this.controls);
+      console.log("Target", this.controls);
 
       this.controls.update();
 
@@ -107,7 +108,6 @@ export default {
 
             model.position.x += 3;
             model.position.y += 1;
-
           }
           // model.traverse((child) => {
           //   if (child.type == "SkinnedMesh") {
@@ -121,7 +121,7 @@ export default {
         undefined
       );
 
-      window.addEventListener('resize', this.onWindowResize);
+      window.addEventListener("resize", this.onWindowResize);
 
       this.renderer.setAnimationLoop(() => {
         this.render();

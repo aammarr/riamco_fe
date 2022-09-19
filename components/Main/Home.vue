@@ -1,7 +1,7 @@
 <template>
   <v-container class="t-h-screen t-relative t-left-0">
     <ModelsChain
-      v-if="!vuetify.breakpoint.theme"
+      v-if="!$vuetify.breakpoint.mobile"
       class="t-absolute t-left-0 t-right-0"
       id="enzyme_model"
     />
