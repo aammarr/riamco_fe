@@ -1,13 +1,19 @@
 <template>
-  <v-container class="
-      
-      t-h-screen
-     
-      challenge__cont__section
-    ">
+  <v-container class="t-h-screen challenge__cont__section">
     <v-row justify="center" align="center" class="t-h-full challenge__section">
-      <v-col cols="12" xs="12" sm="12" md="12" lg="6" xl="6" align-self="center">
-        <div class="t-font-sans t-text-xl text-left" id="challenge__section__left">
+      <v-col
+        cols="12"
+        xs="12"
+        sm="12"
+        md="12"
+        lg="6"
+        xl="6"
+        align-self="center"
+      >
+        <div
+          class="t-font-sans t-text-xl text-left"
+          id="challenge__section__left"
+        >
           <UtilsTitle :text="'The Challenge'" />
           <p class="py-5">
             What to do with billions of tones of plastic waste piling up in
@@ -25,7 +31,15 @@
         </div>
       </v-col>
 
-      <v-col cols="12" xs="12" sm="12" md="12" lg="6" xl="6" align-self="center">
+      <v-col
+        cols="12"
+        xs="12"
+        sm="12"
+        md="12"
+        lg="6"
+        xl="6"
+        align-self="center"
+      >
         <div id="challenge__section__right">
           <video autoplay muted loop>
             <source src="videos/site_overview.mp4" type="video/mp4" />
@@ -44,7 +58,7 @@ export default {
         .timeline({
           scrollTrigger: {
             trigger: ".challenge__cont__section",
-            markers: true,
+            markers: false,
             scrub: true,
             pin: true,
           },

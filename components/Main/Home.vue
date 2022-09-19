@@ -1,8 +1,17 @@
 <template>
   <v-container class="t-h-screen t-relative t-left-0">
-    <ModelsChain class="t-absolute t-left-0 t-right-0" id="enzyme_model" />
+    <ModelsChain
+      v-if="!vuetify.breakpoint.theme"
+      class="t-absolute t-left-0 t-right-0"
+      id="enzyme_model"
+    />
     <v-row class="t-h-full" justify="center" align="center">
-      <v-col align="start" align-self="start" class="t-h-full d-flex flex-column justify-center align-start" cols="12">
+      <v-col
+        align="start"
+        align-self="start"
+        class="t-h-full d-flex flex-column justify-center align-start"
+        cols="12"
+      >
         <div class="jumboltron">
           <LogoBlue class="mx-auto" />
 
@@ -14,10 +23,6 @@
         </div>
       </v-col>
     </v-row>
-   
-
-    
-
   </v-container>
 </template>
 
@@ -27,10 +32,7 @@ import Chain from "../Models/Chain.vue";
 
 export default {
   data() {
-    
-    return {
-      
-    };
+    return {};
   },
   methods: {},
   mounted() {
