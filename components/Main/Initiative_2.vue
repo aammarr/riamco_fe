@@ -22,7 +22,7 @@
 
       <v-col align-self="center" align="center" cols="12" xs="12" sm="12" md="12" lg="6" xl="6">
         <div id="initiative__section__right"
-          :style="$vuetify.breakpoint.mobile ? 'height: 750px' : 'height: 550px !important;'"
+          :style="$vuetify.breakpoint.mobile ? 'height: 750px; border-radius: 20px' : 'height: 550px !important;'"
           class="d-flex flex-column align-center justify-center">
           <v-card v-for="(card, index) in initiative_cards" :key="`card-${index}`" :id="`card-${index + 1}`"
             :class="$vuetify.breakpoint.mobile ? '' : card.class" style="z-index: 1"
@@ -129,6 +129,41 @@ export default {
           delay: 0.1,
           xPercent: -20,
           stagger: 0.5,
+          opacity: 0,
+          ease: "power4.inOut",
+        });
+    } else {
+      this.gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".initiative__cont__section",
+            markers: false,
+            scrub: true,
+            start: '-=400',
+            end: "+=400",
+          },
+        })
+        .from("#initiative__section__left", {
+          duration: 0.2,
+          opacity: 0,
+
+          stagger: 0.5,
+          ease: "back",
+        })
+        .from("#initiative__section__right", {
+          duration: 0.1,
+          opacity: 0,
+        })
+        .from("#initiative__section__right #card-1", {
+          duration: 0.2,
+          stagger: 0.5,
+          opacity: 0,
+          ease: "power4.inOut",
+        })
+        .from("#initiative__section__right #card-2", {
+
+
+          duration: 0.2,
           opacity: 0,
           ease: "power4.inOut",
         });

@@ -10,6 +10,7 @@ export default {
   mounted() {
     this.gsap.timeline().from("#riamco_logo", {
       duration: 1,
+      scrub: 3,
       delay: 0.3,
       rotate: 45,
       opacity: 0,

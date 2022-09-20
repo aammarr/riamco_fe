@@ -1,5 +1,5 @@
 <template>
-  <v-container class="t-h-screen challenge__cont__section">
+  <v-container class="challenge__cont__section" :class="$vuetify.breakpoint.mobile ? '' : 't-h-screen'">
     <v-row justify="center" align="center" class="t-h-full challenge__section">
       <v-col cols="12" xs="12" sm="12" md="12" lg="6" xl="6" align-self="center">
         <div class="t-font-sans t-text-2xl t-text-justify" id="challenge__section__left">
@@ -40,8 +40,10 @@ export default {
           scrollTrigger: {
             trigger: ".challenge__cont__section",
             markers: false,
+            start: "top top",
+            end: "+=400",
             scrub: true,
-            pin: true,
+            pin: ".challenge__cont__section",
           },
         })
         .from("#challenge__section__right video", {
@@ -54,6 +56,31 @@ export default {
           duration: 1,
           opacity: 0,
           xPercent: 100,
+          stagger: 0.1,
+          ease: "power2.inOut",
+        });
+    } else {
+      this.gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".challenge__cont__section",
+            markers: false,
+            start: "-=400",
+            end: "+=400",
+            scrub: true,
+
+          },
+        })
+        .from("#challenge__section__right video", {
+          duration: 1,
+          opacity: 0,
+          yPercent: 1,
+          ease: "power2.in",
+        })
+        .from("#challenge__section__left", {
+          duration: 1,
+          opacity: 0,
+          xPercent: 1,
           stagger: 0.1,
           ease: "power2.inOut",
         });

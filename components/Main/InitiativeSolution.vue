@@ -1,13 +1,6 @@
 <template>
-  <v-container class="
-      d-flex
-      flex-column
-      t-h-full
-      align-center
-      justify-center
-      solution__cont__section
-    ">
-    <v-row justify="center" align="center" class="t-h-screen">
+  <v-container class="d-flex flex-column t-h-full align-center justify-center solution__cont__section">
+    <v-row justify="center" align="center" :class="$vuetify.breakpoint.mobile ? '' : 't-h-screen'">
       <v-col cols="12" xs="12" sm="12" md="12" lg="6" xl="6" align-self="center">
         <div id="solution__section__left">
           <div class="solution__content">
@@ -53,11 +46,11 @@ export default {
           .timeline({
             scrollTrigger: {
               trigger: ".solution__cont__section",
-              // start: "top top",
-              // end: "bottom bottom",
+              start: "top top",
+              end: "+=1000",
               markers: false,
               scrub: true,
-              pin: true,
+              pin: ".solution__cont__section",
             },
           })
           .from("#solution__section__left", {
@@ -82,17 +75,50 @@ export default {
           })
           .from(
             "#solution__section__right #closed_system_loop",
-            // {
-            //   opacity: 0,
-            //   rotation: 0,
-            // },
-            {
-              // duration: 2,
 
+            {
               opacity: 0,
-              // rotation: 720,
               ease: "power3.inOut",
-              // delay: 0.1,
+            }
+          );
+      } else {
+        this.gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".solution__cont__section",
+              start: "-=400",
+              end: "+=500",
+              markers: false,
+              scrub: 2,
+
+            },
+          })
+          .from("#solution__section__left", {
+            scrollTrigger: ".solution__cont__section",
+            duration: 1.5,
+            opacity: 0,
+            yPercent: -10,
+            ease: "power2.inOut",
+          })
+          .from(".what_means_title", {
+            duration: 1,
+            delay: 1,
+            opacity: 0,
+            xPercent: -10,
+            ease: "power2.inOut",
+          })
+          .from(".what_means_content", {
+            // delay: 3,
+            opacity: 0,
+            xPercent: -10,
+            ease: "power2.inOut",
+          })
+          .from(
+            "#solution__section__right #closed_system_loop",
+
+            {
+              opacity: 0,
+              ease: "power3.inOut",
             }
           );
       }

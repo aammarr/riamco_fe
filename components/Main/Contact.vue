@@ -24,12 +24,13 @@
 
             <div class="form_action_btns">
 
+              <a href="mailto:info@riamco.com">
+                <div class="d-flex align-center">
+                  <v-icon>mdi-mail</v-icon>
 
-              <div class="d-flex align-center">
-                <v-icon>mdi-mail</v-icon>
-
-                <span>abc@mail.com</span>
-              </div>
+                  <span>info@riamco.com</span>
+                </div>
+              </a>
 
               <div class="d-flex align-center">
                 <v-icon>mdi-map-marker</v-icon>
@@ -46,7 +47,7 @@
               <v-text-field outlined dense placeholder="Riamco" />
 
               <label for="company">Your email address</label>
-              <v-text-field outlined dense placeholder="abc@mail.com" />
+              <v-text-field outlined dense placeholder="info@riamco.com" />
 
               <label for="company">Phone number</label>
               <v-text-field outlined dense placeholder="+881 12345679" />
@@ -77,7 +78,7 @@ export default {
             trigger: ".contact_section",
             markers: false,
             scrub: true,
-            pin: true,
+            pin: ".contact_section",
           },
         })
         .from(".contact-card", {
@@ -103,12 +104,22 @@ export default {
 }
 
 .form_action_btns {
+
+  a {
+    color: black;
+  }
+
+  a:hover {
+    color: rgba(0, 0, 0, 0.651);
+  }
+
   div {
     padding: 10px;
     cursor: pointer;
     width: 200px;
 
     span {
+      color: black;
       margin-left: 20px;
       font-size: 1rem;
     }
